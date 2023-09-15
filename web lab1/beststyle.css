@@ -1,0 +1,72 @@
+body { 
+    display: grid;
+    grid-template-areas: 
+      "header header nav"
+      "ads top nav"
+      "ads article nav"
+      "footer footer footer";
+    grid-template-rows: 120px 1fr 600px 120px;  
+    grid-template-columns: 20% 1fr 15%;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    height: 100vh;
+    margin: 0;
+    }  
+header, footer, article, nav, div, top {
+    padding: 1.2em;
+    background-color: coral;
+}
+#pageHeader {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+#pageFooter {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#mainArticle { 
+    grid-area: article; 
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    font-size: 20px;
+}
+#mainNav { 
+    grid-area: nav; 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: large;
+}
+#siteAds { 
+    grid-area: ads; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+#topArticle{
+    display: flex;
+    grid-area: top;
+}
+
+#header_text{
+    text-align: right;
+}
+
+img{
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
+
+#footer_lorem{
+    text-align: left;
+}
