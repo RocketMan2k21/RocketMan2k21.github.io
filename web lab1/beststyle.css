@@ -7,14 +7,13 @@ body {
       "footer footer footer";
     grid-template-rows: 120px 1fr 600px 120px;  
     grid-template-columns: 20% 1fr 15%;
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+
     height: 100vh;
     margin: 0;
     }  
-header, footer, article, nav, div, top {
-    padding: 1.2em;
-    background-color: coral;
+header, footer, article, nav, top {
+
+    border:1px solid;
 }
 #pageHeader {
     grid-area: header;
