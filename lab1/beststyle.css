@@ -1,19 +1,23 @@
 body { 
     display: grid;
+    background-color: whitesmoke;
     grid-template-areas: 
       "header header nav"
       "ads top nav"
       "ads article nav"
       "footer footer footer";
-    grid-template-rows: 120px 1fr 600px 120px;  
-    grid-template-columns: 20% 1fr 15%;
-
+   
+    grid-template-rows: 2fr 1fr 5fr 2fr;  
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
     height: 100vh;
     margin: 0;
     }  
-header, footer, article, nav, top {
-
-    border:1px solid;
+header, footer, article, nav, top, ads {
+    background-color: white ;
+    padding: 20px;
+    
 }
 #pageHeader {
     grid-area: header;
@@ -60,11 +64,6 @@ header, footer, article, nav, top {
     text-align: right;
 }
 
-ad_img{
-    width: 100px;
-    height: 100%;
-    object-fit: cover;
-}
 
 #footer_lorem{
     text-align: left;
