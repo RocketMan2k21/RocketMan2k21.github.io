@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+  }
+  #top{
+    display: flex;
+    flex: 6;
+  }
+
+  #bottom{
+    flex: 4;
+  }
+ 
+  header, footer {
+    background: yellowgreen;
+    height: 5%;
+  }
+
+ footer {
+    background: rgb(69, 74, 59);
+    height: 10%;
+  }
+  header, footer, center {
+    padding: 1em;
+  }
+
+  header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+#pancake{
+   height: 40%;
+   background: black;
+}
+
+#pancake img{
+   
+    object-fit: contain ;
+ }
+
