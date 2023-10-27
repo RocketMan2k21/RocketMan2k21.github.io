@@ -19,17 +19,19 @@
   }
 
   #bottom{
+    display: flex;
     flex: 4;
+    
   }
  
   header, footer {
     background: yellowgreen;
-    height: 5%;
+    
   }
 
  footer {
     background: rgb(69, 74, 59);
-    height: 10%;
+    
   }
   header, footer, center {
     padding: 1em;
@@ -55,13 +57,36 @@
     
   }
 
-#pancake{
-   height: 40%;
-   background: black;
+  #article{
+    background: cyan;
+  }
+
+
+
+#horizontal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-left: 25%;
+  padding-right: 25%;
+  gap: 20em;
+  
 }
 
-#pancake img{
-   
-    object-fit: contain ;
- }
+#chef{
+  display: flex;
+  background: yellow;
+}
+
+#pancake{
+  display: flex;
+  width: 400px;
+  height: 300px;
+
+}
+
+#main img{
+  max-width:100%
+}
 
