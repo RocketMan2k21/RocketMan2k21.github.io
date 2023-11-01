@@ -1,4 +1,6 @@
 # RocketMan2k21.github.io
 Лабораторні з вебу
 
-Website - https://rocketman2k21.github.io/src/
+lab1-3 - https://rocketman2k21.github.io/src/lab1-3/index.html
+
+lab4 - https://rocketman2k21.github.io/src/lab4/index.html
