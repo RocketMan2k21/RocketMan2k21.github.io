@@ -2,42 +2,24 @@
     box-sizing: border-box;
 }
   body {
-    display: flex;
-    min-height: 100vh;
+    display: block;
+    height: 100vh;
     flex-direction: column;
     margin: 0;
   }
-  #main {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
 
-  }
-  #top{
-    display: flex;
-    flex: 6;
-  }
-
-  #bottom{
-    display: flex;
-    flex: 4;
-    
-  }
- 
-  header, footer {
-    background: yellowgreen;
+  header, footer{
     
   }
 
  footer {
     background: rgb(69, 74, 59);
-    
+    height: 10%;
   }
-  header, footer, center {
-    padding: 1em;
-  }
-
+  
   header{
+    height: 5%;
+    background: greenyellow;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -50,11 +32,47 @@
     justify-content: center;
   }
 
+  #main {
+    display: grid;
+    grid-auto-rows: 20%;
+    grid-template-columns: repeat(2, 1fr);
+    height: 85%;
+  }
+  
   #top{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: flex;
     align-items: center;
     justify-content: center;
     
+  }
+
+  #horizontal{
+    grid-row-start: 3;
+    grid-row-end: 5;
+    z-index: 1;
+    grid-column-start: 1;
+    grid-column-end:3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 25%;
+    padding-right: 25%;
+    column-gap: 20em;
+    
+    
+  }
+
+  #bottom{
+    grid-row-start:4;
+    grid-row-end:6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background: grey;
   }
 
   #article{
@@ -63,26 +81,14 @@
 
 
 
-#horizontal{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-left: 25%;
-  padding-right: 25%;
-  gap: 20em;
-  
-}
-
 #chef{
-  display: flex;
-  background: yellow;
+  max-width: 35%;
 }
 
 #pancake{
-  display: flex;
-  width: 400px;
-  height: 300px;
+
+  max-width: 30%;
+ 
 
 }
 
