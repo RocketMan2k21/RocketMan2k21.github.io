@@ -1,27 +1,18 @@
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+@media screen and (min-width: 600px){
+  
   body {
     display: block;
     height: 100vh;
     display: block;
-    height: 100vh;
     flex-direction: column;
     margin: 0;
   }
 
-  header, footer{
-    
-  }
-
- footer {
-    background: rgb(69, 74, 59);
-    height: 10%;
-  }
-  
   header{
-    height: 5%;
-    background: greenyellow;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,6 +20,7 @@
   }
 
   footer{
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,9 +30,23 @@
     display: grid;
     grid-auto-rows: 20%;
     grid-template-columns: repeat(2, 1fr);
-    height: 85%;
+    height: 82vh;
   }
-  
+
+  #menu{
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+  }
+  #menu a{
+    text-decoration: none;
+    color: #3e4348;
+  }
+
+  #menu a:hover{
+    color: #4cc9f0;
+  }
+
   #top{
     grid-row-start: 1;
     grid-row-end: 4;
@@ -62,8 +68,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 20%;
+    padding-right: 20%;
     column-gap: 15em;
     
     
@@ -74,73 +80,72 @@
     grid-row-end:6;
     grid-column-start: 1;
     grid-column-end: 3;
-    background: grey;
   }
 
   #article{
-    background: cyan;
+    padding: 1em;
+    text-align: justify;
   }
 
+  #chef{
+    max-width: 30%;
+  }
+
+  #pancake{
+    max-width: 30%;
+  }
+
+  #touch_menu{
+    display: none;
+  }
+
+  
 
 
-#chef{
-  max-width: 35%;
-}
-
-#pancake{
-  max-width: 30%;
-}
-
-#main img{
-  max-width:100%
 }
 
 @media screen and (max-width: 600px){
-  *{
-    box-sizing: border-box;
-}
+ 
   body {
     display: block;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     margin: 0;
   }
 
- footer {
-    background: rgb(69, 74, 59);
-    height: 10%;
-  }
-  
-  
   header{
-    height: 5%;
-    background: greenyellow;
-    height: 5%;
-    background: greenyellow;
+    height: 8%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between ;
+    padding: 1em;
+    
   }
 
   footer{
+    height:10%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
+  header #menu{
+    display: none;
+  }
+
+  #touch_menu{
+    width: 50px;
+  }
+
   #main {
     display: grid;
     grid-template-rows: repeat(7, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    height: 85%;
+    grid-auto-columns: 50%;
+    height: 82%;
   }
   
   #top{
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
     grid-column-start: 1;
@@ -153,12 +158,14 @@
 
   #horizontal{
     grid-row-start: 3;
-    grid-row-end: 7;
-    z-index: 1;
+    grid-row-end: 8;
     grid-column-start: 1;
-    grid-column-end:3;
+    grid-column-end: 3;
     display: grid;
+    z-index: 1;
     grid-auto-rows: 50%;
+    padding: 0em 2em;
+    padding-bottom: 2em;
     
     
   }
@@ -168,29 +175,51 @@
     grid-row-end:8;
     grid-column-start: 1;
     grid-column-end: 3;
-    background: grey;
   }
 
   #article{
     display: block;
-    background: cyan;
-    margin-left: 15%
-    padding: 2em;
+    margin-left: 15%;
+    padding: 1em;
+    }
+  #chef{
+    max-width: 50%;
   }
 
-
-#chef{
-  max-width: 50%;
+  #pancake{
+    max-width: 70%;
+  }
+  
 }
 
-#pancake{
-  max-width: 50%;
+#article{
+  background: #4cc9f0
 }
 
-#main img{
-  max-width:100%
+#article button{
+  margin-top: 1em;
+  padding: 1em;
+  background: transparent;
 }
+
+#top{
+  background: #dee2e6;
 }
+
+footer{
+  background: #6c757d;
+}
+
+#logo{
+  width: 100px;
+
+}
+
+img{
+    max-width:100%
+}
+
+
 
 
 
