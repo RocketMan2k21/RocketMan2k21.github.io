@@ -4,6 +4,8 @@
   body {
     display: block;
     height: 100vh;
+    display: block;
+    height: 100vh;
     flex-direction: column;
     margin: 0;
   }
@@ -109,7 +111,10 @@
     height: 10%;
   }
   
+  
   header{
+    height: 5%;
+    background: greenyellow;
     height: 5%;
     background: greenyellow;
     display: flex;
@@ -132,6 +137,10 @@
   }
   
   #top{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
     grid-column-start: 1;
