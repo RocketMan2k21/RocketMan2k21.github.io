@@ -121,3 +121,177 @@ window.onload = function () {
 // Add event listener to the form
 const form = document.getElementById('numbersForm');
 form.addEventListener('submit', getMinValues);
+
+
+// 4. Напишіть скрипт, який при настанні події keypress встановлює властивість
+// «курсив» для всього тексту в блоці «3» при встановленні користувачем
+// відповідної галочки у формі і зберігає відповідне значення «курсивності» тексту
+// в localStorage броузера так, щоб при наступному відкриванні веб-сторінки
+// значення «курсивності» тексту в блоці «3» встановлювалось із збереженого
+// значення в localStorage.
+
+restoreFontFromLocalStorage();
+    window.addEventListener('keypress', function (event) {
+        
+        const italicCheckbox = document.getElementById('italicCheckbox');
+        // Check if the key pressed is 'i' or 'I'
+        if(italicCheckbox.checked){
+            if (event.key.toLowerCase() === 'i') {
+                // Toggle italic style
+                
+
+                if(italicCheckbox.checked){
+                    applyFontStyle('italic');
+                    // Save the italic state to localStorage
+                    localStorage.setItem('italicState', italicCheckbox.checked.toString());
+
+                }
+                else{
+                    applyFontStyle('normal');
+                    localStorage.removeItem('italicState', italicCheckbox.checked.toString());
+                }
+            }
+        }else{
+            applyFontStyle('normal');
+            localStorage.removeItem('italicState', italicCheckbox.checked.toString());
+        }
+    });
+
+
+
+function restoreFontFromLocalStorage() {
+    const savedItalicState = localStorage.getItem('italicState');
+        if (savedItalicState === 'true') {
+            applyFontStyle('italic');
+            document.getElementById('italicCheckbox').checked = true;
+        }
+}
+
+
+function applyFontStyle(style) {
+    const block3 = document.getElementsByTagName('nav')[0];
+    block3.style.fontStyle = style;
+}
+
+// Напишіть скрипт задання CSS-інструкцій для будь-якого тега в HTML-структурі
+// номерних блоків (1..6):
+// а) необхідні елементи форми появляються у блоці «5» внаслідок подвійного
+// кліку на блоці «у», кількість CSS-інструкцій необмежена;
+// б) після елементів форми розміщується кнопка, внаслідок натискання на яку
+// додана CSS-інструкція зберігається в localStorage броузера і задіюється для
+// відповідного тега;
+// г) для кожної нової CSS-інструкції в блоці «2» розміщується кнопка, внаслідок
+// натискання якої ця CSS- інструкція видаляється із localStorage броузера і її вплив
+// на відповідний тег припиняється - без перезавантаження веб-сторінки.
+let tagSelect;
+
+function showForm() {
+    const block5 = document.getElementsByTagName('article')[0];
+    const form = document.createElement('form');
+    form.id = 'dynamicForm';
+
+    tagSelect = document.createElement('select');
+    tagSelect.id = 'tagSelect';
+    const tagOptions = ['footer', 'header', 'nav', 'article', 'aside', 'panel'];
+    tagOptions.forEach(function (tag) {
+        const option = document.createElement('option');
+        option.value = tag;
+        option.text = tag;
+        tagSelect.appendChild(option);
+    });
+
+    form.appendChild(tagSelect);
+
+    // Add input for CSS instruction
+    const cssInput = document.createElement('input');
+    cssInput.type = 'text';
+    cssInput.placeholder = 'Enter CSS instruction';
+    form.appendChild(cssInput);
+
+    // Add button to apply CSS instruction
+    const applyButton = document.createElement('button');
+    applyButton.type = 'button';
+    applyButton.innerText = 'Apply CSS';
+    applyButton.addEventListener('click', applyCSS);
+    form.appendChild(applyButton);
+
+    // Add form to block 5
+    block5.appendChild(form);
+}
+
+// Function to apply CSS instruction
+function applyCSS() {
+    const form = document.getElementById('dynamicForm');
+    const cssInput = form.querySelector('input');
+
+    // Get the entered CSS instruction
+    const selectedTag = tagSelect.value;
+    const cssInstruction = cssInput.value;
+
+    // Apply CSS to the appropriate tag
+    const selectedElement = document.getElementsByTagName(selectedTag)[0];
+    if (selectedElement) {
+        selectedElement.style.cssText = cssInstruction;
+    }
+
+    // Save the CSS instruction and selected element to localStorage
+    saveToLocalStorage(selectedTag, cssInstruction, selectedElement);
+
+    // Create a button in block 2 for removing the CSS instruction
+    createRemoveButton(cssInstruction, selectedTag);
+
+    // Clear the form
+    form.remove();
+}
+
+// Function to create a button for removing CSS instruction
+function createRemoveButton(cssInstruction, selectedTag) {
+    const block2 = document.getElementsByTagName('aside')[0];
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'Remove CSS: ' + cssInstruction + " for " + selectedTag;
+    removeButton.addEventListener('click', function () {
+        removeFromLocalStorage(cssInstruction, selectedTag);
+        removeCSS(selectedTag);
+        removeButton.remove();
+    });
+    block2.appendChild(removeButton);
+}
+
+// Function to remove CSS instruction from the appropriate tag
+function removeCSS(selectedTag) {
+    const selectedElement = document.getElementsByTagName(selectedTag)[0];
+    if (selectedElement) {
+        selectedElement.style.cssText = '';
+    }
+}
+
+// Function to save CSS instruction and selected element to localStorage
+function saveToLocalStorage(selectedTag, cssInstruction, selectedElement) {
+    const storedData = JSON.parse(localStorage.getItem('cssInstructions')) || {};
+    const elementId = selectedElement ? selectedElement.id : null;
+
+    // Save the CSS instruction and selected element to localStorage
+    storedData[selectedTag] = { cssInstruction, elementId };
+    localStorage.setItem('cssInstructions', JSON.stringify(storedData));
+}
+
+// Function to remove CSS instruction from localStorage
+function removeFromLocalStorage(cssInstruction, selectedTag) {
+    const storedData = JSON.parse(localStorage.getItem('cssInstructions')) || {};
+    delete storedData[selectedTag];
+    localStorage.setItem('cssInstructions', JSON.stringify(storedData));
+}
+
+// Check for stored CSS instructions on page load
+window.onload = function () {
+    const storedData = JSON.parse(localStorage.getItem('cssInstructions')) || {};
+    for (const selectedTag in storedData) {
+        const { cssInstruction } = storedData[selectedTag];
+        createRemoveButton(cssInstruction, selectedTag);
+    }
+};
+
+// Add event listener to block 5 for double click
+const block5 = document.getElementsByTagName('footer')[0].querySelector('h1');
+block5.addEventListener('dblclick', showForm);
+

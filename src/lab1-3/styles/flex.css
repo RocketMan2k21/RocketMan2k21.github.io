@@ -102,6 +102,10 @@
     text-align: left;
   }
 
+  nav{
+    flex-direction: column;
+  }
+
 
   @media screen and (max-width: 600px){
 
@@ -175,6 +179,11 @@
       text-align: center;
     }
   
+    nav{
+      flex-direction: column;
+    }
+  
+
     nav ul{
       display: flex;
       list-style-type: none;
