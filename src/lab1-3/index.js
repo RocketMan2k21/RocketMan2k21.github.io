@@ -63,7 +63,12 @@ function getCookie(name) {
 }
 
 function deleteCookie(name) {
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    document.cookie = name + '=;';
+}
+
+function deleteNumbersForm() {
+    const div = document.getElementById('numbers-container');
+    div.remove();
 }
 
 function showResultDialog(result) {
@@ -110,13 +115,13 @@ function getMinValues(event) {
     
 }
 
-// Check for cookies on page load
-window.onload = function () {
+(() => {
     const hasCookies = getCookie('minValuesResult');
     if (hasCookies) {
+        deleteNumbersForm();
         showCookiesDialog();
     }
-};
+})();
 
 // Add event listener to the form
 const form = document.getElementById('numbersForm');
