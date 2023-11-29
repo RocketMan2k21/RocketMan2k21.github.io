@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Configuration Form</title>
+</head>
+<body>
+    <form id="configForm">
+        <label for="elementCount">Кількість елементів:</label>
+        <input type="number" id="elementCount" name="elementCount" min="1" value="3">
+
+        <label for="elementOrder">Порядок елементів (через кому):</label>
+        <input type="text" id="elementOrder" name="elementOrder" value="1,2,3">
+
+        <label for="content">Контент для кожного елементу (через кому):</label>
+        <input type="text" id="content" name="content" value="Element 1,Element 2,Element 3">
+
+        <button type="button" onclick="configureObject()">Зберегти налаштування</button>
+    </form>
+
+    <script>
+        function configureObject() {
+            const elementCount = parseInt(document.getElementById('elementCount').value, 10);
+            const elementOrderInput = document.getElementById('elementOrder').value;
+            const elementOrder = elementOrderInput.split(',').map(Number);
+
+            const contentInput = document.getElementById('content').value;
+            const content = contentInput.split(',');
+
+            // Перевірка, чи кількість елементів, порядок і контент співпадають
+            if (elementCount === elementOrder.length && elementCount === content.length) {
+                // Створити об'єкт або відправити його на сервер
+                const configObject = {
+                    elementCount,
+                    elementOrder,
+                    content,
+                };
+
+                // Вивести налаштування у консоль (ви можете відправити їх на сервер тут)
+                console.log(configObject);
+            } else {
+                alert("Кількість елементів, порядок і контент повинні бути однаковими");
+            }
+        }
+    </script>
+</body>
+</html>

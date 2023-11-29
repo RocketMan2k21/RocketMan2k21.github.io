@@ -46,11 +46,7 @@
   .inner-col-2 article{
     background:yellow;
     flex:4;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
+  
   }
   
   
@@ -106,18 +102,18 @@
     flex-direction: column;
   }
 
-  .carousel {
+#carousel-container {
     overflow: hidden;
-    width: 100%;
+}
+
+#carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    flex: 0 0 100%;
+    min-width: 100%;
     box-sizing: border-box;
-    padding: 0 10px;
-    text-align: center;
 }
 
 
