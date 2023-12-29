@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Nunito:ital@0;1&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    /* background: rgb(238,217,174); */
+    /* background: linear-gradient(90deg, rgba(238,217,174,1) 0%, rgba(241,216,239,1) 50%, rgba(205,240,255,1) 100%); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    
+    background-image: linear-gradient(
+        90deg, rgba(238,217,174,1) 0%, rgba(241,216,239,1) 50%, rgba(205,240,255,1) 100%
+    ), url("../images/gradient1.png");
+    overflow-x: hidden;
+}
+
+.text-green {
+    color: #00873E;
+}
+
+body > * {
+   margin: 0 10%;
+}
+
+.bg-bulbe {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    rotate: 5deg;
+    top: -20px;
+    margin: 0;
+}
+
+.navbar {
+    width: 80%;
+    height: 80px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 32px;
+    margin-right: 10px;
+}
+
+.company-name {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.25s;
+}
+
+.nav-links a:nth-of-type(1) {
+    color: #00873E;
+}
+
+.nav-links a:hover {
+    color: white;
+    text-decoration: underline;
+    background-color: #00873E;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-buttons button {
+    border: none;
+    background: none;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.nav-buttons button:nth-of-type(2) {
+    color: white;
+    background-color: #00873E;
+}
+
+.nav-buttons button:hover {
+    opacity: 0.7;
+}
+
+.nav-buttons button:nth-of-type(1):hover {
+    color:white;
+    background-color: #00873E;
+}
+
+.bg-santa {
+    position: absolute;
+    rotate: -90deg;
+    font-weight: 400;
+    font-size: 250px;
+    color: transparent;
+    background: linear-gradient(270.12deg, rgba(254, 194, 142, 0.1) 4.92%, rgba(206, 154, 211, 0.1) 102.95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin: 0;
+    font-family: 'Yeseva One', serif;
+    left: -200px;
+    z-index: -1;
+}
+
+.christmas-time {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.christmas-time img {
+    width: 40%;
+    margin-left: 100px;
+}
+
+.card-heading {
+    font-family: 'Yeseva One', serif;
+    font-size: 65px;
+    letter-spacing: 2px;
+}
+
+.card-text {
+    font-size: 18px;
+}
+
+h3 {
+    font-family: 'Yeseva One', serif;
+    font-size: 38px;
+    margin: 0.5rem;
+}
+
+.card-button {
+    border: none;
+    font-size: 18px;
+    font-family: 'DM Sans', sans-serif;;
+    background-color:#00873E;
+    padding: 1em 3em;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.2s;
+}
+
+.card-button:hover {
+    background-color: #165f1b;
+}
+
+.santa-is-coming {
+    background-color: white;
+    margin: 0;
+    padding: 0 10%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.santa-is-coming img {
+    width: 40%;
+}
+
+.christmas-wish {
+    background-color: white;
+    margin: 0;
+    padding: 0 10%;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.christmas-wish img {
+    width: 50%;
+}
+
+.gift-items {
+    margin: 0;
+    padding: 0 10%;
+    height: 80vh;
+    background-color:#D9F7FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mini-cards {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.mini-card {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-box {
+    background-color: #FEC42F;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box img {
+    width: 70%;
+}
+
+.about-event {
+    background-color: white;
+    margin: 0;
+    padding: 0 10%;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.event-text {
+    font-size: 24px;
+}
+
+.about-event-img {
+    width: 50%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.santa-gifts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 150px;
+}
+
+.floating-gifts {
+    position: relative;
+    align-self: start;
+    top: 100px;
+    width: 20vw;
+}
+
+.santa-deers {
+    width: 30vw;
+}
+
+.join-party {
+    width: 80%;
+    padding: 0 10%;
+    margin: 0;
+    height: 100vh;
+    background-color: #D9F7FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 150px;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px grey;
+    gap: 10px;
+}
+
+.main-form button {
+    width: 50%;
+}
+
+input[type=text], input[type=email] {
+    padding: 1em;
+    box-sizing: border-box;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+input[type=text]:invalid, input[type=email]:invalid {
+    border-color: red;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+    border-color: darkgray;
+}
+
+.icon {
+    width: 50px;
+    position: relative;
+    top: 280px;
+    left: -20px;
+    transform: rotate(15deg);
+    transition: all 0.2s;
+}
+
+.icon:hover {
+    transform: rotate(-15deg);
+}
+
+.footer {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+    width: 80%;
+}
+
+.footer-img {
+    width: 100%;
+}
+
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social {
+    width: 50px;
+    height: 50px;
+}
+
+.social:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 910px) {
+    .navbar {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .separator {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+        border-bottom: 3px solid #00873E;
+    }
+
+    .separator:nth-of-type(3) {
+        margin-bottom: 0;
+        border: none;
+    }
+
+    .christmas-time {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .christmas-time img {
+        width: 80%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+
+    .christmas-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .santa-is-coming {
+        flex-direction: column-reverse;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .christmas-wish {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .gift-items {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .mini-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .mini-card {
+        width: 50%;
+        border-radius: 10px;
+        border: 1px solid;
+        padding: 1em;
+        background-color: white;
+    }
+
+    .about-event {
+        flex-direction: column-reverse;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .about-event-img {
+        width: 100%;
+    }
+
+    .about-cards {
+        flex-direction: column;
+    }
+
+    .join-party {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .main-form button {
+        width: auto;
+    }
+
+    .santa-gifts {
+        margin-left: 0;
+        margin-bottom: 50px;
+    }
+
+    .floating-gifts {
+        top: 15vw;
+        width: 30vw;
+    }
+
+    .santa-deers {
+        width: 50vw;
+    }
+
+    .join-party {
+        padding-bottom: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: space-around;
+        height: auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    .card-heading {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .main-form input, p {
+        font-size: 12px;
+    }
+
+    .main-form h3 {
+        font-size: 20px;
+    }
+
+    .main-form {
+        padding: 1.5rem;
+    }
+
+    .icon {
+        width: 35px;
+    }
+}
